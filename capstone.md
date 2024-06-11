@@ -182,6 +182,63 @@ AWS offers a pay-as-you-go pricing model, making it cost-effective and scalable 
 
 ---
 
+# Background
+
+Amazon Web Services (AWS), a subsidiary of Amazon.com, is a leading cloud computing platform that offers a range of services including computing power, storage, databases, machine learning, and analytics. Launched in 2006, AWS provides a scalable and cost-effective alternative to traditional on-premises infrastructure. With a global network of data centres, AWS has become popular among startups, enterprises, and government organizations. Its pay-as-you-go pricing model and extensive service offerings have made it a key player in digital transformation, innovation, and scalability for businesses across various industries. AWS caters to a diverse range of needs, from hosting simple websites to running complex machine learning algorithms and big data analytics.
+
+Adam Selipsky, the CEO of Amazon Web Services (AWS), has led the company from a start-up to a multi-billion-dollar business. AWS began working on its cloud computing platform in the early 2000s, under the project code-named "Project A1." In 2002, foundational services like storage and compute were developed. AWS officially launched on March 14, 2006, with services like Amazon S3 and Amazon EC2. During the COVID-19 pandemic, AWS played a crucial role in supporting organizations by scaling their infrastructure for remote work and increased online demand. The company expanded its offerings in containers with Amazon EKS and server-less with AWS Lambda, allowing developers to build and deploy applications more efficiently. AWS also introduced the AWS Marketplace for third-party software and services. In 2021-2022, AWS launched Amazon Bracket, a quantum computing service, and committed to reducing its carbon footprint and achieving sustainability goals.
+
+
+# Requirements
+
+To launch a highly available web application on AWS, you need the following components and configurations:
+
+### 1. Authorized AWS Account
+Ensure you have an authorized AWS account with adequate permissions to configure and provide a robust highly available web application.
+
+### 2. Multiple Availability Zones
+Deploy your application across multiple AWS Availability Zones (AZs) within a region. This ensures that if one AZ experiences issues, your application can continue running in another AZ.
+
+### 3. AWS VPC (Virtual Private Cloud)
+Configure a new VPC with the following components:
+- **Public Subnets**: For public-facing resources.
+- **Internet Gateway**: To allow internet access.
+- **Route Table**: To manage traffic routing within the VPC.
+
+### 4. AWS EC2 (Elastic Cloud Compute)
+- **Launch Template**: Create a launch template for EC2 instances.
+- **Auto Scaling Group**: Set up an Auto Scaling group to manage instance scaling.
+- **Elastic Load Balancer (ELB)**: Distribute traffic across multiple instances using one of the following:
+  - Classic Load Balancer
+  - Application Load Balancer
+  - Network Load Balancer
+
+### 5. Auto Scaling
+Set up Auto Scaling groups to automatically adjust the number of instances in response to traffic demands. This helps ensure that your application can handle increased loads without manual intervention.
+
+### 6. Amazon RDS Multi-AZ
+If you use a relational database, configure Amazon RDS with Multi-AZ deployment for high availability. This replicates your database to a standby instance in another AZ for failover.
+
+### 7. Security
+Implement security best practices, including:
+- **AWS Identity and Access Management (IAM)**: Manage user permissions and access.
+- **Network Security Groups (NSGs)**: Control inbound and outbound traffic to your resources.
+- **Encryption**: Ensure data is encrypted both at rest and in transit.
+
+### 8. Content Delivery
+Use Amazon CloudFront for content delivery. CloudFront is a content delivery network (CDN) that caches your content at edge locations, reducing latency and increasing availability.
+
+### 9. Amazon S3 for Static Assets
+Store static assets (e.g., images, CSS, JavaScript) in Amazon S3 for durability and scalability. You can also use S3 to host static websites.
+
+### 10. High Availability Databases
+Consider services like Amazon RDS, which provides high availability and scalability out of the box.
+
+### 11. Monitoring and Alerts
+Set up AWS CloudWatch for monitoring your resources and creating alarms for automated responses. CloudWatch can also be integrated with AWS Lambda for auto-scaling or other automated actions.
+
+
+
 
 
 
