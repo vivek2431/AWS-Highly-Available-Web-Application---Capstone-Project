@@ -273,7 +273,7 @@ Use AWS CloudTrail to store records of every event and API call logs on your AWS
 
 Finally, AWS offers a powerful set of services that can be used to build a resilient, highly available and scalable web application server. By leveraging services like ELB, Auto Scaling, EC2, RDS, S3, and Cloud Front and so on, we can build an infrastructure that can handle high traffic and data processing requirements while maintaining high availability and scalability when properly configured, following AWS best practices.
 
-## Overview
+## Description
 
 AWS offers a wide range of services that can be used to build a scalable, resilient, and highly available web/application server. By leveraging services like Elastic Load Balancer (ELB), Auto Scaling, Elastic Compute Cloud (EC2), Simple Storage Service (S3), Relational Database Service (RDS), CloudFront, Virtual Private Cloud (VPC), and other AWS services, you can build a highly available and scalable infrastructure for your web server.
 
@@ -320,6 +320,20 @@ AWS CloudWatch collects and tracks metrics, logs, and events from various AWS re
 
 ### 8. SNS Alerts
 SNS (Simple Notification Service) sends alerts to subscribed endpoints or clients. When CloudWatch detects a stopped EC2 instance, SNS is used to send email alerts to a specified destination. Integrating SNS with CloudWatch helps quickly alert the appropriate parties and take suitable actions to resolve any potential issues, ensuring the availability and reliability of the online service.
+
+## Data Flow Diagram (DFD)
+
+![image6](https://github.com/vivek2431/AWS-Highly-Available-Web-Application---Capstone-Project/assets/137812531/98745008-78a0-4895-bef0-cc461a686d82)
+
+## Flowchart(Modules and Submodules) 
+
+![image7](https://github.com/vivek2431/AWS-Highly-Available-Web-Application---Capstone-Project/assets/137812531/f34d192d-54ab-4e0c-a930-40dad96450cc)
+
+## Data Description (E-R Diagram)
+
+![image8](https://github.com/vivek2431/AWS-Highly-Available-Web-Application---Capstone-Project/assets/137812531/bbac61fb-39e0-4b3a-b875-c70be2d5b90a)
+
+
 
 
 
