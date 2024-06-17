@@ -336,6 +336,7 @@ SNS (Simple Notification Service) sends alerts to subscribed endpoints or client
 
 # Sample Code
 
+
 ## AWS RDS and EC2 Integration
 
 This repository contains scripts to set up an AWS RDS instance, connect to it from an EC2 instance, insert dummy data, and fetch it using an Apache server.
@@ -354,37 +355,38 @@ This repository contains scripts to set up an AWS RDS instance, connect to it fr
 # Update and install MySQL client
 sudo apt update
 sudo apt-get install mysql-client -y
+```
 
 # Verify MySQL client installation
-mysql --version
+```mysql --version```
 
 # Connect to RDS instance (replace with your actual endpoint, username, and password)
-mysql -h mydatabase.c5wym6zs3no9.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
+```mysql -h mydatabase.c5wym6zs3no9.us-east-1.rds.amazonaws.com -P 3306 -u admin -p```
 # Enter password: admin123
 
 ### Script 2: RDS dummy data insertion
-
+```
 #!/bin/bash
 # MySQL connection details
 host="mydatabase.c5wym6zs3no9.us-east-1.rds.amazonaws.com"
 username="admin"
 password="admin123"
 database="mydatabase"
-
+```
 # SQL query to create table
-create_table_query="CREATE TABLE IF NOT EXISTS Family (id INT PRIMARY KEY, name VARCHAR(50));"
+`create_table_query="CREATE TABLE IF NOT EXISTS Family (id INT PRIMARY KEY, name VARCHAR(50));"`
 
 # SQL query to insert dummy data
-insert_data_query="INSERT INTO Family (id, name) VALUES (1, 'Saurabh'), (2, 'Nishant'), (3, 'Rohit'), (4, 'Azruddin');"
+`insert_data_query="INSERT INTO Family (id, name) VALUES (1, 'Saurabh'), (2, 'Nishant'), (3, 'Rohit'), (4, 'Azruddin');"`
 
 # Connect to MySQL and execute queries
-mysql -h $host -u $username -p$password -D $database -e "$create_table_query" && \
+```mysql -h $host -u $username -p$password -D $database -e "$create_table_query" && \
 mysql -h $host -u $username -p$password -D $database -e "$insert_data_query"
 
 echo "Table created with dummy data."
-
+```
 ### Apache server fetches data from RDS
-
+```
 #!/bin/bash
 # Database configuration
 host="mydatabase.c5wym6zs3no9.us-east-1.rds.amazonaws.com"
@@ -392,8 +394,9 @@ username="admin"
 password="admin123"
 database="mydatabase"
 table="Family"
-
+```
 # Install required packages
+```
 sudo apt update
 sudo apt install -y apache2 php libapache2-mod-php php-mysql
 
@@ -418,16 +421,15 @@ if (\$result->num_rows > 0) {
 \$conn->close();
 ?>
 EOF
-
+```
 # Configure Apache to serve PHP files
-sudo sed -i "s/index.html/index.php/g" /etc/apache2/mods-enabled/dir.conf
+`sudo sed -i "s/index.html/index.php/g" /etc/apache2/mods-enabled/dir.conf`
 
 # Restart Apache
-sudo systemctl restart apache2
+`sudo systemctl restart apache2`
 
 # Display public IP
-echo "Web application is now accessible at: http://$(curl -s ifconfig.me)"
-```
+`echo "Web application is now accessible at: http://$(curl -s ifconfig.me)"`
 
 ### Usage
 Connect to your EC2 instance.
