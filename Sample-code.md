@@ -2,7 +2,6 @@
 ## AWS RDS and EC2 Integration
 
 This repository contains scripts to set up an AWS RDS instance, connect to it from an EC2 instance, insert dummy data, and fetch it using an Apache server.
-
 ## Prerequisites
 
 - AWS EC2 instance
